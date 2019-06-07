@@ -13,12 +13,11 @@ var mouse = {
 }
 
 var colorArray = [
-    '#0C39A0',
-    '#FF2828',
-    '#CF398E',
-    '#FF7E14',
-    '#FFEB14',
-    '#58E912',
+    '#2900F6',
+    '#9E00F5',
+    '#00BCB5',
+    '#FFF700',
+    '#FF8900',
 ];
 
 var gravity = 1;
@@ -53,7 +52,7 @@ function Ball(x,y,dx,dy,rad){
         ctx.arc(this.x,this.y, this.rad, 0,Math.PI * 2, false);
         ctx.fillStyle = colorArray[this.color];
         ctx.fill();
-        ctx.stroke();
+        // ctx.stroke();
         // Update the Movement
         this.update();
 
@@ -67,7 +66,7 @@ function Ball(x,y,dx,dy,rad){
 
     this.update = function(){
         
-        if(this.y + this.rad> canvas.height){
+        if(this.y + this.rad + this.dy> canvas.height){
             this.dy = -this.dy * friction;
             // console.log("Friction Negative");
         }else{
@@ -90,8 +89,8 @@ var BallArray = [];
 function init(){
     BallArray = [];
 
-    for(var i = 0; i < 1; i++){
-        var rad = Math.floor(Math.random() * 30 + 10);
+    for(var i = 0; i < 400 ; i++){
+        var rad = Math.floor(Math.random() * 20 + 5);
         var x = Math.floor(Math.random() * (canvas.width - 2*rad) + rad);
         var y = Math.floor(Math.random() * (canvas.height - 2*rad) + rad);
         var dy = Math.floor(Math.random() * 6 + 1);
