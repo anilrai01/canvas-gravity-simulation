@@ -3,6 +3,7 @@ var canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+// console.log(canvas.height);
 
 var ctx = canvas.getContext('2d');
 
@@ -56,18 +57,19 @@ function Ball(x,y,dx,dy,rad){
         // Update the Movement
         this.update();
 
-        console.log(this.x);
-        console.log(this.y);
-        console.log(this.dx);
-        console.log(this.dy);
-        console.log(this.rad);
-        console.log('Change');
+        // console.log(this.x);
+        // console.log(this.y);
+        // console.log(this.dx);
+        // console.log(this.dy);
+        // console.log(this.rad);
+        // console.log('Change');
     }
 
     this.update = function(){
         
         if(this.y + this.rad> canvas.height){
             this.dy = -this.dy * friction;
+            // console.log("Friction Negative");
         }else{
             this.dy += gravity;
         }
