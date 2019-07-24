@@ -93,8 +93,8 @@ function init(){
         var rad = Math.floor(Math.random() * 20 + 5);
         var x = Math.floor(Math.random() * (canvas.width - 2*rad) + rad);
         var y = Math.floor(Math.random() * (canvas.height - 2*rad) + rad);
-        var dy = Math.floor(Math.random() * 6 + 1);
-        var dx = Math.floor(Math.random() * 2 + 1);
+        var dy = (Math.random() - 0.5) * 2;
+        var dx = (Math.random() - 0.5) * 2;
     
         BallArray.push(new Ball(x,y,dx,dy,rad));
     }
